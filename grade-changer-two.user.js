@@ -3,6 +3,7 @@
 // @namespace   GitHub
 // @match       *://*.powerschool.*/guardian/scores.html*
 // @grant       GM_setValue
+// @grant       GM_getValue
 // @version     1.0
 // @author      genZrizzCode
 // @description Changes all grades lower than an A-, to an A (91%). Only works for the overview at scores.html. Grade Changer 1 will work on the overview.
