@@ -4,7 +4,7 @@
 // @match       *://*.powerschool.*/guardian/scores.html*
 // @grant       GM_setValue
 // @grant       GM_getValue
-// @version     1.0
+// @version     2.0
 // @author      genZrizzCode
 // @description Changes all grades lower than an A-, to an A (91%). Only works for the overview at scores.html. Grade Changer 1 will work on the overview.
 // @updateURL   https://raw.githubusercontent.com/genZrizzCode/Grade-Changer-2/main/grade-changer-two.user.js
@@ -16,7 +16,7 @@
 (function() { // This makes the following code happen immediately
     console.log("%cGrade Changer 2 init.", "font-size: 2em; font-weight: bold; color: #93F;") // %c makes it styleable
     'use strict';
-    window.addEventListener('load', () => { // This makes the following code start when the page loads
+    window.addEventListener('load', async () => { // This makes the following code start when the page loads
         let tbody = document.querySelector('table tbody'); // makes tbody = the first <tbody> on the webpage
         if (tbody) { // If there is a <tbody>:
             tbody.id = 'grade-table';  // Changes the <tbody>'s id to 'grade-table'
@@ -40,6 +40,10 @@
         } else {
             console.log('No tbody found.');
         }
+        let runCount = await GM_getValue('runCount', 0);
+        runCount += 1;
+        await GM_setValue('runCount', runCount);
+        console.log(`Grade Changer 2 has run ${runCount} time${runCount === 1 ? '' : 's since version 2.0'}.`);    
         console.log("%cGrade Changer 2 fin.", "font-size: 2em; font-weight: bold; color: #93F;")
     });
 })();
