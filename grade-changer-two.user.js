@@ -18,7 +18,7 @@
     window.addEventListener('load', () => { // This makes the following code start when the page loads
         let tbody = document.querySelector('table tbody'); // makes tbody = the first <tbody> on the webpage
         if (tbody) { // If there is a <tbody>:
-            tbody.id = 'grade-table';  // Changes the <tbody>'s id to 'grade-table'
+            tbody.id = 'grade-table'; // Changes the <tbody>'s id to 'grade-table'
             console.log('ID added to tbody:', tbody);
 
             let badLetterGrades = ['B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'].map(g => g.toUpperCase());
@@ -27,6 +27,7 @@
             let cells = tbody.querySelectorAll('td'); // Selects all table cells in the <tbody>
 
             cells.forEach(cell => { // Check each cell
+                // Following code removes whitespace and checks for a match
                 let rawText = cell.textContent.replace(/\s+/g, '').toUpperCase();
                 let match = rawText.match(/^(A\+|A-|A|B\+|B-|B|C\+|C-|D\+|D-|D|F)/);
                 let gradeText = match ? match[0] : '';
