@@ -8,7 +8,8 @@
 // @author      genZrizzCode
 // @description Changes all grades lower than an A-, to an A (91%). Only works for the overview at scores.html. Grade Changer 1 will work on the overview.
 // @updateURL   https://raw.githubusercontent.com/genZrizzCode/Grade-Changer-2/main/grade-changer-two.user.js
-// @downloadURL   https://raw.githubusercontent.com/genZrizzCode/Grade-Changer-2/main/grade-changer-two.user.js
+// @downloadURL https://raw.githubusercontent.com/genZrizzCode/Grade-Changer-2/main/grade-changer-two.user.js
+// @license     MIT
 // ==/UserScript==
 
 // License: MIT License
